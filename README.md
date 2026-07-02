@@ -25,10 +25,11 @@ Custom SPA architecture with:
 GitHub Pages
 
 ## Live Demo
-https://your-link-here
-
+[https://nikunjsharmadev.github.io/StreamUI/#/feed
+](https://nikunjsharmadev.github.io/StreamUI/#/feed)
 ## Screenshots
-(Add later)
+
+<img width="1262" height="657" alt="Screenshot 2026-07-02 071619" src="https://github.com/user-attachments/assets/8f2f3f0d-1159-4fd1-bc02-2fc0f6f02852" />
 
 ## Future Improvements
 - Node.js backend
