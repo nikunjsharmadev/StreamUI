@@ -204,8 +204,8 @@ a {
   }
 
   .feed {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: none;
+    gap: 50px;
   }
 
   .page {
