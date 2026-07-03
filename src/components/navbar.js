@@ -6,7 +6,7 @@ export function NavBar() {
   return `
     <div class="nav-links">
       <div class="search-box">
-        <input id="search" placeholder="Search videos..." />
+        <input id="search" placeholder="Search" />
       </div>
     </div>
     <button class="logout-btn" id="logoutBtn">Logout</button>`;
