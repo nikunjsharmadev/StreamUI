@@ -27,9 +27,12 @@ GitHub Pages
 ## Live Demo
 [https://nikunjsharmadev.github.io/StreamUI/#/feed
 ](https://nikunjsharmadev.github.io/StreamUI/#/feed)
-## Screenshots
 
-<img width="1262" height="657" alt="Screenshot 2026-07-02 071619" src="https://github.com/user-attachments/assets/8f2f3f0d-1159-4fd1-bc02-2fc0f6f02852" />
+## Screenshots
+<img width="1277" height="657" alt="Screenshot 2026-07-03 054729" src="https://github.com/user-attachments/assets/1cbf1e9d-3c2a-420a-a6e2-39ac9f9024a8" />
+
+
+<img width="270" height="603" alt="Screenshot 2026-07-03 054918" src="https://github.com/user-attachments/assets/1dd9743c-d8d1-450b-b373-ef232c276c1d" />
 
 ## Future Improvements
 - Node.js backend
