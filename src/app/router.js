@@ -1,9 +1,6 @@
-import { HomePage } from "../pages/homePage.js";
-import { FeedPage } from "../pages/feedPage.js";
-import { initLogin, LoginPage } from "../pages/loginPage.js";
-import { Auth } from "../services/authService.js";
-import { initNavbar, NavBar } from "../components/navbar.js";
-import { initNotFound, pageNotFound } from "../pages/pageNotFound.js";
+import { HomePage, FeedPage, LoginPage, PageNotFound } from "../pages/index.js";
+import { AuthService } from "../services/index.js";
+import { NavBar } from "../components/index.js";
 export class Router {
   constructor(root) {
     this.init();
@@ -13,38 +10,36 @@ export class Router {
     window.addEventListener("load", () => this.render());
   }
   getPath() {
-    return location.hash.replace("#", "") || "/";
+    return location.hash.slice(1) || "/";
   }
   render() {
     const path = this.getPath();
-    if (!guardRoute(path)) return;
+    if (!this.guardRoute(path)) return;
     const view = document.getElementById("view");
     const navbar = document.getElementById("navbar");
     switch (path) {
       case "/login":
         view.innerHTML = LoginPage();
         navbar.innerHTML = "";
-        initLogin();
         break;
       case "/feed":
         view.innerHTML = FeedPage();
         navbar.innerHTML = NavBar();
-        initNavbar();
         break;
       default:
-        view.innerHTML = pageNotFound();
+        view.innerHTML = PageNotFound();
         navbar.innerHTML = "";
-        initNotFound();
     }
   }
-}
-export function guardRoute(path) {
-  const protectedRoute = ["/feed"];
-  if (protectedRoute.includes(path)) {
-    if (!Auth.isLoggedIn()) {
-      location.hash = "/login";
-      return false;
+  guardRoute(path) {
+    const authService = new AuthService();
+    const protectedRoute = ["/feed"];
+    if (protectedRoute.includes(path)) {
+      if (!authService.isLoggedIn()) {
+        location.hash = "#/login";
+        return false;
+      }
     }
+    return true;
   }
-  return true;
 }

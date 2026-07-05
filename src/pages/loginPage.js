@@ -1,5 +1,6 @@
-import { Auth } from "../services/authService.js";
+import { AuthService } from "../services/index.js";
 export function LoginPage() {
+  setTimeout(() => initLogin(), 0);
   return `
     <div class="login-page">
         <div class="demo-credentials">
@@ -17,8 +18,7 @@ export function LoginPage() {
     </div>
     `;
 }
-
-export function initLogin() {
+function initLogin() {
   const form = document.getElementById("loginForm");
   const user = document.getElementById("username");
   const pass = document.getElementById("password");
@@ -26,8 +26,9 @@ export function initLogin() {
   pass.value = "anything";
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (Auth.login(user.value, pass.value)) {
-      location.hash = "/feed";
+    const authService = new AuthService();
+    if (authService.login(user.value, pass.value)) {
+      location.hash = "#/feed";
     } else {
       document.getElementById("error").textContent = "Invalid credentials";
     }

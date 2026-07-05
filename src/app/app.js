@@ -1,4 +1,4 @@
-import { initNavbar, NavBar } from "../components/navbar.js";
+import { NavBar } from "../components/index.js";
 export function renderApp() {
   const app = document.getElementById("app");
   app.innerHTML = `
@@ -8,5 +8,4 @@ export function renderApp() {
     </nav>
     <div id="view"></view>
   </div>`;
-  initNavbar();
 }

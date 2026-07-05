@@ -1,7 +1,8 @@
-import { Auth } from "../services/authService.js";
-
-export function pageNotFound() {
-  const buttonText = Auth.isLoggedIn() ? "Go to Feed" : "Go to Login";
+import { AuthService } from "../services/index.js";
+export function PageNotFound() {
+  setTimeout(() => initPageNotFound(), 0);
+  const authService = new AuthService();
+  const buttonText = authService.isLoggedIn() ? "Go to Feed" : "Go to Login";
   return `
     <div class="not-found">
         <h1>404</h1>
@@ -10,7 +11,7 @@ export function pageNotFound() {
         <button id="goFeedBtn">${buttonText}</button>
     </div>`;
 }
-export function initNotFound() {
+function initPageNotFound() {
   const btn = document.getElementById("goFeedBtn");
   if (!btn) return;
   btn.addEventListener("click", () => {
